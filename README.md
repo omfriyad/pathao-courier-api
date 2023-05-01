@@ -5,6 +5,11 @@ API DOCS: [Pathao Api](https://merchant.pathao.com/courier/developer-api)
 Python wrapper for Pathao courier api
 ## Setup
 
+```python
+pip install pathao-courier-api
+```
+
+## Usage
 
 ```python
 from pathao_api import PathaoApi
