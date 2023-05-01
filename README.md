@@ -1,2 +1,5 @@
-# pathao-courier-api
-Python wrapper for pathao courier api
+# Pathao-courier-api
+
+API DOCS: [Pathao Api](https://merchant.pathao.com/courier/developer-api)
+
+Python wrapper for Pathao courier api
