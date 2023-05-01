@@ -22,17 +22,13 @@ class PathaoApi(object):
 
     def issue_access_token(self):
         url = f'{self.base_url}/aladdin/api/v1/issue-token'
-        headers = {
-            'Content-Type': "application/json",
-            'Accept': "application/json"
-        }
         data = {'client_id': self.client_id,
                 'client_secret': self.client_secret,
                 'username': self.username,
                 'password': self.password,
                 'grant_type': "password",
                 }
-        response = requests.post(url, json=data, headers=headers)
+        response = self.get_response_data(url, json=data, headers=self.headers)
         self.issued_access_token_response = response.json()
         self.issue_access_token_timestamp = datetime.timestamp(datetime.now())
         return response.json()
@@ -52,21 +48,26 @@ class PathaoApi(object):
         headers.update({'Authorization': 'Bearer %s' % self.access_token})
         return headers
 
-    def get_json_response(self, url):
-        response = requests.get(url, headers=self.headers)
-        return response.json()['data']['data']
+    def get_response_data(self, url, data=None, method='get', headers=None):
+        response = None
+        if method == 'get':
+            response = requests.get(url, headers=headers or self.headers)
+        if method == 'post':
+            response = requests.post(url, json=data, headers=headers or self.auth_headers)
+        assert response
+        return response.json()['data']
 
     def get_city_list(self):
         url = f'{self.base_url}/aladdin/api/v1/countries/1/city-list'
-        return self.get_json_response(url)
+        return self.get_response_data(url)
 
     def get_zone_list(self, city_id):
         url = f'{self.base_url}/aladdin/api/v1/cities/{city_id}/zone-list'
-        return self.get_json_response(url)
+        return self.get_response_data(url)
 
     def get_area_list(self, zone_id):
         url = f'{self.base_url}/aladdin/api/v1/zones/{zone_id}/area-list'
-        return self.get_json_response(url)
+        return self.get_response_data(url)
 
     def create_order(self, store_id, order_id, sender_name, sender_phone, recipient_name, recipient_phone, address,
                      city_id, zone_id, area_id, special_instruction, item_quantity, item_weight, amount_to_collect,
@@ -91,10 +92,10 @@ class PathaoApi(object):
             'amount_to_collect': amount_to_collect,
             'item_description': item_description,
         }
-        response = requests.post(url=url, json=data, headers=self.auth_headers)
-        return response.json()
+        data = self.get_response_data(url=url, data=data, headers=self.auth_headers)
+        return data
 
-    def get_delivery_cost(self, city_id, zone_id, store_id, item_type='2', delivery_type=48, item_weight=.5):
+    def get_delivery_cost(self, store_id, city_id, zone_id, item_type='2', delivery_type=48, item_weight=.5):
         url = f'{self.base_url}/aladdin/api/v1/merchant/price-plan'
         data = {'store_id': store_id,
                 'item_type': item_type,
@@ -102,8 +103,8 @@ class PathaoApi(object):
                 'item_weight': item_weight,
                 'recipient_city': city_id,
                 'recipient_zone': zone_id}
-        response = requests.post(url, json=data, headers=self.auth_headers)
-        return response.json()['data']
+        data = self.get_response_data(url, data=data, headers=self.auth_headers)
+        return data
 
     def get_stores(self):
         url = f'{self.base_url}/aladdin/api/v1/stores'
