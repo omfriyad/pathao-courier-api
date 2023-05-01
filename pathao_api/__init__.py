@@ -54,7 +54,6 @@ class PathaoApi(object):
             response = requests.get(url, headers=headers or self.headers)
         if method == 'post':
             response = requests.post(url, json=data, headers=headers or self.auth_headers)
-        assert response
         return response.json()['data']
 
     def get_city_list(self):
