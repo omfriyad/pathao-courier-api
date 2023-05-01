@@ -25,11 +25,7 @@ client = PathaoApi(client_id = 267,
 ```python
 client.access_token
 ```
-
-
-
-
-    'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjVjMjliMmM4ZmRjNDYyNzliNjgwYTNmYTRiM2E1NjczZDkxYTRmODQ0MGY0MjJmMmVkOGQ3YmIzMDI0MTBmYmVhNjM1MjEyZmE0ZWY2MmY0In0.eyJhdWQiOiIyNjciLCJqdGkiOiI1YzI5YjJjOGZkYzQ2Mjc5YjY4MGEzZmE0YjNhNTY3M2Q5MWE0Zjg0NDBmNDIyZjJlZDhkN2JiMzAyNDEwZmJlYTYzNTIxMmZhNGVmNjJmNCIsImlhdCI6MTY4Mjk0MTcyNSwibmJmIjoxNjgyOTQxNzI1LCJleHAiOjE2ODMzNzM3MjQsInN1YiI6IjM1MiIsInNjb3BlcyI6W119.u9ZURoDJEddtJZqqfhUeFregIJEfcEmrBGRHKkm1uWC6d38DQ7DyL2IYpjdsblba1WlwQI9krYblH_38V8kel48fSO6PlXLc6M1LwXnF8FfHU4MNSlIHNVya9FuuunZf1kDFdh4oJZ8X7Cyez-v0-qpyC5MeGHYV9gnSfg18POmafqKsijBPl14BGD40bmJmvxTDsit03kM4H9-Q78ngDPVk4WaIICOyS_ShpNwJxyAIp4XhX-O50e937dBKmFBRTh_jQdYrQKJLJDVTa0mck2qe5B48qVIL1_yQ0-zqPWrOQ-HBZscDk8jl5aGK6E5b4zO71eqj3_yxD94Ip4Po8l5TZw1Gh4y99-M2wOoQR-QFhoEoI3mowQsiPp4UVZD8DmQjH7lbRsj9Us4oAe-6acYsg67kNUzM5wo54bRbYgHTHy057tMpkNZABK_snGx_kfdJXt_vDjqSrAsgj9NZXtrGLx1iZ6EZn_siJxlrq8MQmkrQjaJlAGxKjqWs_iZ4gSKAR7WZ4zrZPDfoO18kL2LxJEoyG1JYzQIusrbTrRCEiSeumUdnXgYKwxrJvCjkcF_8ywhrZ08_YwgZQ7BBH-ThRslZWi-Cxhyqi73lf8X8-i07ILsEd_XFzm_RXZI-DqMAIu7d52PQWEl1lJF3goasTkbHsnXoLKEcicpRdo0'
+    'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjVj...52PQWEl1lJF3goasTkbHsnXoLKEcicpRdo0'
 
 
 
@@ -65,12 +61,6 @@ client.get_zone_list(city_id=1)
       {'zone_id': 317, 'zone_name': 'Arambag'},
       {'zone_id': 965, 'zone_name': 'Ashkona'},
       ....
-      {'zone_id': 1003, 'zone_name': 'Uttara Sector 18'},
-      {'zone_id': 935, 'zone_name': 'Uttara Sector 3'},
-      {'zone_id': 936, 'zone_name': 'Uttara Sector 4'},
-      {'zone_id': 937, 'zone_name': 'Uttara Sector 5'},
-      {'zone_id': 939, 'zone_name': 'Uttara Sector 7'},
-      {'zone_id': 946, 'zone_name': 'Uttara Sector 8'},
       {'zone_id': 940, 'zone_name': 'Uttara Sector 9'},
       {'zone_id': 938, 'zone_name': 'Uttara sector 6'},
       {'zone_id': 962, 'zone_name': 'Vatara'},
