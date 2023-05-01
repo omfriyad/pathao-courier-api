@@ -28,7 +28,7 @@ class PathaoApi(object):
                 'password': self.password,
                 'grant_type': "password",
                 }
-        response = self.get_response_data(url, json=data, headers=self.headers)
+        response = requests.post(url, json=data, headers=self.headers)
         self.issued_access_token_response = response.json()
         self.issue_access_token_timestamp = datetime.timestamp(datetime.now())
         return response.json()
@@ -92,7 +92,7 @@ class PathaoApi(object):
             'amount_to_collect': amount_to_collect,
             'item_description': item_description,
         }
-        data = self.get_response_data(url=url, data=data, headers=self.auth_headers)
+        data = self.get_response_data(url=url, data=data, method='post', headers=self.auth_headers)
         return data
 
     def get_delivery_cost(self, store_id, city_id, zone_id, item_type='2', delivery_type=48, item_weight=.5):
@@ -103,7 +103,7 @@ class PathaoApi(object):
                 'item_weight': item_weight,
                 'recipient_city': city_id,
                 'recipient_zone': zone_id}
-        data = self.get_response_data(url, data=data, headers=self.auth_headers)
+        data = self.get_response_data(url, data=data, method='post', headers=self.auth_headers)
         return data
 
     def get_stores(self):
