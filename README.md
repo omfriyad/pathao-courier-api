@@ -22,7 +22,7 @@ client = PathaoApi(client_id = 267,
                    client_secret='wRcaibZkUdSNz2EI9ZyuXLlNrnAv0TdPUPXMnD39',
                    username='test@pathao.com',
                    password='lovePathao',
-    base_url='https://hermes-api.p-stageenv.xyz')
+                   base_url='https://hermes-api.p-stageenv.xyz')
 ```
 
 ### Test Access Token
@@ -193,8 +193,8 @@ client.create_order(store_id='55876',
                     item_type='2')
 ```
 ```
-    {'consignment_id': 'DZ010523G674QD',
-     'merchant_order_id': 'Test #1',
-     'order_status': 'Pending',
-     'delivery_fee': 70}
+{'consignment_id': 'DZ010523G674QD',
+ 'merchant_order_id': 'Test #1',
+ 'order_status': 'Pending',
+ 'delivery_fee': 70}
 ```
