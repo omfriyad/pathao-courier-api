@@ -1,4 +1,5 @@
 # Pathao-courier-api
+[PyPi 1.0.0](https://pypi.org/project/pathao-courier-api/1.0.0/)
 
 API DOCS: [Pathao Api](https://merchant.pathao.com/courier/developer-api)
 
